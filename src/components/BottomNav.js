@@ -11,7 +11,7 @@ export default function BottomNav() {
   const [value, setValue] = React.useState(0);
 
   return (
-    <Box sx={{ width: '100%', mt:3, textAlign:'center' }}>
+    <Box sx={{ width: '100%', mt:3, textAlign:'center', color:'white' }}>
       <Typography variant="body1" color="white">© 2024 All Rights Reserved</Typography>
 
       <BottomNavigation
@@ -22,9 +22,9 @@ export default function BottomNav() {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+        <BottomNavigationAction label="Recents" icon={<RestoreIcon sx={{color:'white'}} />} />
+        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon sx={{color:'white'}} />} />
+        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon sx={{color:'white'}} />} />
       </BottomNavigation>
     </Box>
   );

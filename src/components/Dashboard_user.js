@@ -39,8 +39,9 @@ const DashboardUser = () => {
   const [Tabarr, setTabarr] = useState([]);
   const Getdata = useCallback(async (id) => {
     try {
-      let url = `https//api.depx.dev/api/FlashMoon/UserLvlByIdAndLevel/${id}/${Lv}`;
+      let url = `https://api.depx.dev/api/FlashMoon/UserLvlByIdAndLevel/${id}/${Lv}`;
       let response = await fetch(url);
+      console.log(response)
       if (response.ok) {
         let res = await response.json();
         console.log(res)

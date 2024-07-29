@@ -71,14 +71,13 @@ function Dashboard() {
   window.location.href = (`/Dashboard/${refID}`);
 }
 
-
   const Getdata = useCallback(async (id) => {
     try {
-      let url = `https//api.depx.dev/api/FlashMoon/UserLvlById/${id}`;
+      let url = `https://api.depx.dev/api/FlashMoon/UserLvlById/${id}`;
       let response = await fetch(url);
-
       if (response.ok) { // หรือ response.status === 200
         let res = await response.json();
+        console.log(res)
         setData(res)
       } else {
         console.error(`HTTP error! status: ${response.status}`);
@@ -248,7 +247,7 @@ useEffect(() => {
       <Avatar sx={{height:100, width:100, fontSize:50}}>{id}</Avatar>
     </Stack>
    <h1>ID # {id}</h1>
-   <h3>FLASH Level: 12</h3>
+   <h3>FLASH Level: 13</h3>
    <Box>
            <Button variant="contained" size='large'  sx={{ mr: 2, bgcolor:'rgba(55, 83, 105, 1)'}} onClick={() => goRegister(id)}>Register</Button>
           </Box>

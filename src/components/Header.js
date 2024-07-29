@@ -71,7 +71,13 @@ const ButtonAppBar = forwardRef((props, ref) => {
               icon: 'success',
               confirmButtonText: 'Great!'
             });
-            const sub = accounts[0].substring(0, 6);
+            
+const account = accounts[0];
+
+            const firstFour = account.substring(0, 4); // 4 ตัวแรก
+            const lastThree = account.slice(-3); // 3 ตัวสุดท้าย
+         
+const sub = `${firstFour}${lastThree}`;
             setSubAccount(sub);
           }
         } catch (error) {

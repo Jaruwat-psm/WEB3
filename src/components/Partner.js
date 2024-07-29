@@ -40,7 +40,7 @@ const Partners = () => {
   const [Tabarr, setTabarr] = useState([]);
   const Getdata = useCallback(async (id) => {
     try {
-      let url = `https//api.depx.dev/api/FlashMoon/UserLvlByIdAndLevel/${id}/${Lv}`;
+      let url = `https://api.depx.dev/api/FlashMoon/UserLvlByIdAndLevel/${id}/${Lv}`;
       let response = await fetch(url);
       if (response.ok) {
         let res = await response.json();
