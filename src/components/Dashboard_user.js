@@ -39,7 +39,7 @@ const DashboardUser = () => {
   const [Tabarr, setTabarr] = useState([]);
   const Getdata = useCallback(async (id) => {
     try {
-      let url = `http://203.131.211.123/api/BabyTroll/UserLvlByIdAndLevel/${id}/${Lv}`;
+      let url = `https//api.depx.dev/api/FlashMoon/UserLvlByIdAndLevel/${id}/${Lv}`;
       let response = await fetch(url);
       if (response.ok) {
         let res = await response.json();
@@ -124,19 +124,19 @@ const DashboardUser = () => {
     )
   }
 
-  const NFTITEM = [{id:"1",ItemName:"Baby 1",ItemPrice:"($10)",Level:1},
-    {id:"2",ItemName:"Baby 2",ItemPrice:"($20)",Level:2},
-    {id:"3",ItemName:"Baby 3",ItemPrice:"($40)",Level:3},
-    {id:"4",ItemName:"Baby 4",ItemPrice:"($80)",Level:4},
-    {id:"5",ItemName:"Baby 5",ItemPrice:"($150)",Level:5},
-    {id:"6",ItemName:"Baby 6",ItemPrice:"($250)",Level:6},
-    {id:"7",ItemName:"Baby 7",ItemPrice:"($450)",Level:7},
-    {id:"8",ItemName:"Baby 8",ItemPrice:"($800)",Level:8},
-    {id:"9",ItemName:"Baby 9",ItemPrice:"($1400)",Level:9},
-    {id:"10",ItemName:"Baby 10",ItemPrice:"($2500)",Level:10},
-    {id:"11",ItemName:"Baby 11",ItemPrice:"($3500)",Level:11},
-    {id:"12",ItemName:"Baby 12",ItemPrice:"($5000)",Level:12},
-    {id:"13",ItemName:"Baby 13",ItemPrice:"($10000)",Level:13}
+  const NFTITEM = [{id:"1",ItemName:"FLASH 1",ItemPrice:"($10)",Level:1},
+    {id:"2",ItemName:"FLASH 2",ItemPrice:"($20)",Level:2},
+    {id:"3",ItemName:"FLASH 3",ItemPrice:"($40)",Level:3},
+    {id:"4",ItemName:"FLASH 4",ItemPrice:"($80)",Level:4},
+    {id:"5",ItemName:"FLASH 5",ItemPrice:"($150)",Level:5},
+    {id:"6",ItemName:"FLASH 6",ItemPrice:"($250)",Level:6},
+    {id:"7",ItemName:"FLASH 7",ItemPrice:"($450)",Level:7},
+    {id:"8",ItemName:"FLASH 8",ItemPrice:"($800)",Level:8},
+    {id:"9",ItemName:"FLASH 9",ItemPrice:"($1400)",Level:9},
+    {id:"10",ItemName:"FLASH 10",ItemPrice:"($2500)",Level:10},
+    {id:"11",ItemName:"FLASH 11",ItemPrice:"($3500)",Level:11},
+    {id:"12",ItemName:"FLASH 12",ItemPrice:"($5000)",Level:12},
+    {id:"13",ItemName:"FLASH 13",ItemPrice:"($10000)",Level:13}
    ]
 
    
@@ -204,7 +204,7 @@ const DashboardUser = () => {
           <Typography variant="h4" sx={{color:"white"}}>TreeView Detail</Typography>
           <Paper sx={{ position: 'relative', p: 5, background: 'radial-gradient(circle, rgba(125,125,125,0.7595413165266106) 49%, rgba(49,98,255,0.6558998599439776) 92%)', boxShadow:0 }}>
           <Box sx={{ position: 'absolute', top: 14, left: 20,fontSize:25, color:'white',justifyContent:'center',alignItems:'center' }}>
-         <Typography variant="h6" color="white">Baby {Lv}</Typography>
+         <Typography variant="h6" color="white">FLASH {Lv}</Typography>
                     </Box>
           <Box sx={{ position: 'absolute', top: 14, right:'50%',fontSize:40, color:'white',justifyContent:'center',alignItems:'center' }}>
           <Typography variant="h3" color="white">   {id} </Typography>

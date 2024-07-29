@@ -27,7 +27,7 @@ const ButtonAppBar = forwardRef((props, ref) => {
     <>
       {isMobile ? (
         <Link to='/'>
-          <img src={Moon} style={{ height: '70%', width:'70%' }} alt="Logo" />
+          <img src={Moon} style={{ height: '100%', width:'100%' }} alt="Logo" />
         </Link>
       ) : (
         <Link to='/'>
@@ -104,18 +104,18 @@ const ButtonAppBar = forwardRef((props, ref) => {
       {isMobile ? (
         <Box sx={{ display: 'flex', flexGrow: 1 }}>
           <AppBar position="static" sx={{ background: 'transparent', boxShadow: 'none' }}>
-            <Toolbar sx={{ p: 3 }}>
+            <Toolbar sx={{ p: 2 }}>
               <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
                 <LogoImage />
               </Typography>
               {account ? (
                 <>
                   <Typography style={{ marginRight: '30px' }}>{subAccount}</Typography>
-                  <Button sx={{ bgcolor: 'primary', color: 'white', fontSize:'1rem', borderRadius:50 }} size='medium' variant='contained' onClick={Disconnect}>Disconnect</Button>
+                  <Button sx={{ bgcolor: 'primary', color: 'white', fontSize:'1rem', borderRadius:50 }} fullWidth variant='contained' onClick={Disconnect}>Disconnect</Button>
                 </>
               ) : (
                 <>
-                  <Button sx={{ bgcolor: 'primary', color: 'white', borderRadius:50 }} size='medium' variant='contained' startIcon={<WalletIcon />} onClick={handleConnect}>Connect Wallet</Button>
+                  <Button sx={{ bgcolor: 'primary', color: 'white', borderRadius:50 }} fullWidth variant='contained' startIcon={<WalletIcon />} onClick={handleConnect}>Connect Wallet</Button>
                 </>
               )}
             </Toolbar>

@@ -3,8 +3,6 @@ import Box from '@mui/material/Box';
 import { Link } from "react-router-dom";
 import { Card, Divider, Avatar, CardContent, Typography, Grid, Paper, IconButton, Button, Container } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
-import CardMedia from '@mui/material/CardMedia';
-import { CardActionArea } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
 import List from '@mui/material/List';
@@ -12,7 +10,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ButtonAppBar from './Header';
-import ImgProfile from '../Images/babytroll_pic2.jpg'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
 import StackedBarChartOutlinedIcon from '@mui/icons-material/StackedBarChartOutlined';
@@ -35,14 +32,15 @@ import Image12 from '../Images/Item/12.jpg';
 import Image13 from '../Images/Item/13.png';
 import UsdtIcon from '../Images/usdt.png';
 import NFTCOMPONENT from './Nftcomponent';
-
+import Paertner from '../Images/30758.jpg'
+import Stack from '@mui/material/Stack';
 function Dashboard() {
   const [Data, setData] = useState([]);
   const navigate = useNavigate(); // ใช้ useNavigate hook
   let { id } = useParams();
-    let refLink = `https://reborn.dev/home/register/${id}`
+    let refLink = `https://flashmoon.dev/register/${id}`
   const handleCopy = () => {
-    navigator.clipboard.writeText(`https://reborn.dev/home/register/${id}`);
+    navigator.clipboard.writeText(`https://flashmoon.dev/register/${id}`);
   };
 
   const goRegister = (id) => {
@@ -50,25 +48,33 @@ function Dashboard() {
   }
   const setrefId = localStorage.setItem('refId', id);
   const TempId = localStorage.getItem('refId');
-
- const NFTITEM = [{id:"1",ItemName:"Baby 1",ItemPrice:"($10)",Level:1,imagePath:Image1},
-  {id:"2",ItemName:"Baby 2",ItemPrice:"($20)",Level:2,imagePath:Image2},
-  {id:"3",ItemName:"Baby 3",ItemPrice:"($40)",Level:4,imagePath:Image3},
-  {id:"4",ItemName:"Baby 4",ItemPrice:"($80)",Level:4,imagePath:Image4},
-  {id:"5",ItemName:"Baby 5",ItemPrice:"($150)",Level:5,imagePath:Image5},
-  {id:"6",ItemName:"Baby 6",ItemPrice:"($250)",Level:6,imagePath:Image6},
-  {id:"7",ItemName:"Baby 7",ItemPrice:"($450)",Level:7,imagePath:Image7},
-  {id:"8",ItemName:"Baby 8",ItemPrice:"($800)",Level:8,imagePath:Image8},
-  {id:"9",ItemName:"Baby 9",ItemPrice:"($1400)",Level:9,imagePath:Image9},
-  {id:"10",ItemName:"Baby 10",ItemPrice:"($2500)",Level:10,imagePath:Image10},
-  {id:"11",ItemName:"Baby 11",ItemPrice:"($3500)",Level:11,imagePath:Image11},
-  {id:"12",ItemName:"Baby 12",ItemPrice:"($5000)",Level:12,imagePath:Image12},
-  {id:"13",ItemName:"Baby 13",ItemPrice:"($10000)",Level:13,imagePath:Image13}
+  const [refID, setrefID] = useState('');
+ const NFTITEM = [{id:"1",ItemName:"Flash 1",ItemPrice:"($10)",Level:1,imagePath:Image1},
+  {id:"2",ItemName:"Flash 2",ItemPrice:"($20)",Level:2,imagePath:Image2},
+  {id:"3",ItemName:"Flash 3",ItemPrice:"($40)",Level:3,imagePath:Image3},
+  {id:"4",ItemName:"Flash 4",ItemPrice:"($80)",Level:4,imagePath:Image4},
+  {id:"5",ItemName:"Flash 5",ItemPrice:"($150)",Level:5,imagePath:Image5},
+  {id:"6",ItemName:"Flash 6",ItemPrice:"($250)",Level:6,imagePath:Image6},
+  {id:"7",ItemName:"Flash 7",ItemPrice:"($450)",Level:7,imagePath:Image7},
+  {id:"8",ItemName:"Flash 8",ItemPrice:"($800)",Level:8,imagePath:Image8},
+  {id:"9",ItemName:"Flash 9",ItemPrice:"($1400)",Level:9,imagePath:Image9},
+  {id:"10",ItemName:"Flash 10",ItemPrice:"($2500)",Level:10,imagePath:Image10},
+  {id:"11",ItemName:"Flash 11",ItemPrice:"($3500)",Level:11,imagePath:Image11},
+  {id:"12",ItemName:"Flash 12",ItemPrice:"($5000)",Level:12,imagePath:Image12},
+  {id:"13",ItemName:"Flash 13",ItemPrice:"($10000)",Level:13,imagePath:Image13}
  ]
+ const handleClick = (refID) => {
+  if (refID === null || refID === '') {
+    alert('Please Fill RefID');
+    return;
+  }
+  window.location.href = (`/Dashboard/${refID}`);
+}
+
 
   const Getdata = useCallback(async (id) => {
     try {
-      let url = `http://203.131.211.123/api/BabyTroll/UserLvlById/${id}`;
+      let url = `https//api.depx.dev/api/FlashMoon/UserLvlById/${id}`;
       let response = await fetch(url);
 
       if (response.ok) { // หรือ response.status === 200
@@ -105,20 +111,44 @@ useEffect(() => {
 ];
 
 
-  function StatsCard({ icon, title, value }) {
+  function StatsCard({ icon, title, value, tile2, value2 }) {
     return (
-      <Card sx={{ minWidth: 275, backgroundColor: 'rgba(71, 163, 238, 0.75)', color:'white', margin: 2 }}>
+      <Card sx={{ minWidth: 275, backgroundColor: '#82b8ff', color:'white', margin: 2, position: 'relative',   }}>
+   
         <CardContent>
+        <Grid container spacing={2}>
+        <Grid item xs={6}>
           <Box display="flex" alignItems="center">
-            {icon}
+        
             <Typography gutterBottom>
               {title}
             </Typography>
           </Box>
+          {/* <Box sx={{ position: 'absolute', top: 10, right: 10 }}>
+                  <img src={image} alt="Card graphic" style={{ width: 100, height: 100 }} />
+              </Box> */}
           <Typography variant="h5" component="div">
             {value}
           </Typography>
+          </Grid>
+
+          <Grid item xs={6}>
+          <Box display="flex" alignItems="center">
+          
+            <Typography gutterBottom >
+              {tile2}
+            </Typography>
+          </Box>
+          {/* <Box sx={{ position: 'absolute', top: 10, right: 10 }}>
+                  <img src={image} alt="Card graphic" style={{ width: 100, height: 100 }} />
+              </Box> */}
+          <Typography variant="h5" component="div" >
+            {value2}
+          </Typography>
+          </Grid>
+          </Grid>
         </CardContent>
+       
       </Card>
     );
   }
@@ -127,10 +157,6 @@ useEffect(() => {
     return <img src={UsdtIcon} style={{width:"28px",height:"28px", marginRight:'100px'}} alt="USDT" />;
   };
 
-  const Profile = () => {
-    return <img src={ImgProfile} style={{borderRadius:'50%',width:"50%",height:"50%"}} alt="Profile" />;
-  };
-  
   return (
     <Container maxWidth="xl">
 <Box sx={{color:'white'}}>
@@ -188,11 +214,16 @@ useEffect(() => {
       <StatsCard 
         title="Direct Partners" 
         value="999" 
+        image={Paertner}
+        tile2="Total Direct Income"
+        value2="2.00"
       />
 
 <StatsCard 
-        title="Baby Unlocked" 
+        title="Items Unlocked" 
         value="12" 
+        tile2="Total Level Income"
+        value2="3.377"
       />
     </Grid>
     <Grid item xs={12} lg={4} direction="row">
@@ -200,35 +231,37 @@ useEffect(() => {
         icon={<PersonIcon />} 
         title="Profit Ratio" 
         value="6595.00%" 
+        tile2={"My Team Total Profit"}
+        value2={"99999.50"}
       />
 
 <StatsCard 
         icon={<PersonIcon />} 
         title="Profits" 
         value="$ 15151" 
+        tile2={"FLASTMOON USDT"}
+        value2={"9999"}
       />
     </Grid>
 <Grid item xs={12} lg={2} irection="row" sx={{textAlign:'center'}}>
-   <Profile/>
+<Stack direction="row" justifyContent={'center'} spacing={2}>
+      <Avatar sx={{height:100, width:100, fontSize:50}}>{id}</Avatar>
+    </Stack>
    <h1>ID # {id}</h1>
-   <h3>Rank: Baby 12</h3>
+   <h3>FLASH Level: 12</h3>
+   <Box>
+           <Button variant="contained" size='large'  sx={{ mr: 2, bgcolor:'rgba(55, 83, 105, 1)'}} onClick={() => goRegister(id)}>Register</Button>
+          </Box>
           </Grid>
 
       </Grid>
-
-      <Grid container spacing={2}>
-      <Grid item xs={12} lg={2} sx={{ padding: 2 }}></Grid>
-      <Grid item xs={12} lg={10} sx={{ padding: 2 }}>
-<Box sx={{ p: 4, backgroundColor: '',  color: 'white' }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 4 }}>
         <Typography variant="h6">Not a member yet? Sign up with this upline</Typography>
-        <Box>
-          <Button variant="contained"  sx={{ mr: 2, bgcolor:'rgba(55, 83, 105, 1)'}} onClick={() => goRegister(id)}>Register</Button>
-          <Button variant="contained"  sx={{ mr: 2, bgcolor:'rgba(55, 83, 105, 0.75)'}}>Home</Button>
-          <Button variant="contained" sx={{bgcolor:'rgba(55, 83, 105, 0.50)'}}>Approve USDT</Button>
         </Box>
-      </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
+      <Grid container spacing={2}>
+      {/* <Grid item xs={12} lg={2} sx={{ padding: 2 }}></Grid> */}
+      <Grid item xs={12} lg={9} sx={{ padding: 2 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <TextField
           variant="outlined"
           value={refLink}
@@ -253,27 +286,25 @@ useEffect(() => {
           }}
         />
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Paper sx={{ p: 2, textAlign: 'start', flex: 1, mx: 1, backgroundColor: '#ffffff' }}>
-          <Typography variant="h6">Total Direct Income</Typography>
-          <Typography variant="h4">2.00</Typography>
-        </Paper>
-        <Paper sx={{ p: 2, textAlign: 'start', flex: 1, mx: 1, backgroundColor: '#ffffff' }}>
-          <Typography variant="h6">Total Level Income</Typography>
-          <Typography variant="h4">0.40</Typography>
-        </Paper>
-        <Paper sx={{ p: 2, textAlign: 'start', flex: 1, mx: 1, backgroundColor: '#ffffff' }}>
-          <Typography variant="h6">My Team Total</Typography>
-          <Typography variant="h4">291.00</Typography>
-        </Paper>
-        <Paper sx={{ p: 2, textAlign: 'start', flex: 1, mx: 1, backgroundColor: '#ffffff' }}>
-          <Typography variant="h6">Baby Troll Bonanza</Typography>
-          <Typography variant="h4">0 USDT</Typography>
-        </Paper>
-      </Box>
-    </Box>
+
         </Grid>
-      </Grid>
+        <Grid item xs={12} lg={1} sx={{ padding: 2 }} container justifyContent={'center'}>
+        <Box>
+        <Button variant="contained" size='large' sx={{ mr: 2, bgcolor:'rgba(55, 83, 105, 0.75)'}}>Home</Button>
+          </Box>
+          </Grid>
+          <Grid item xs={12} lg={1} sx={{ padding: 2 }} container justifyContent={'center'}>
+          <Box>
+           <Button variant="contained" size='large'  sx={{ mr: 2, bgcolor:'rgba(55, 83, 105, 1)'}} onClick={() => goRegister(id)}>Register</Button>
+          </Box>
+          </Grid>
+          <Grid item xs={12} lg={1} sx={{ padding: 2 }} container justifyContent={'center'}>
+          <Box>
+          <Button variant="contained" size='large' sx={{bgcolor:'rgba(55, 83, 105, 0.50)'}}>Approve USDT</Button>
+          </Box>
+          </Grid>
+        </Grid>
+
 
 <NFTCOMPONENT NFTITEM={NFTITEM} Data={Data}/>
 
@@ -282,7 +313,7 @@ useEffect(() => {
       <Typography variant="h5" sx={{ m:2 }}>Recent Activites</Typography>
         </Grid>
         <Grid item xs={12} lg={5}>
-        <Typography variant="h5" sx={{ m:2 }}>Baby Troll 3.0 Contacts</Typography>
+        <Typography variant="h5" sx={{ m:2 }}>FLASH MOON 3.0 Contacts</Typography>
         </Grid>
       <Grid item xs={12} lg={7} sx={{ height: 400, overflowY: 'auto', padding: 2, '&::-webkit-scrollbar': {
         width: '10px'
@@ -325,8 +356,39 @@ useEffect(() => {
       <Grid item xs={12} lg={5}  direction="row">
         
       <Box sx={{m:2}}>
-      Look up any Baby Troll 3.0 member account in preview mode. Enter ID to preview.
+      Look up any member account in preview mode. Enter ID to preview.
       </Box>
+      <Paper sx={{ p: 1, background: 'transparent' }}>
+        <Box sx={{ display: 'flex', m: 2, alignItems: 'center' }}>
+          <TextField
+            id="input-with-icon-textfield"
+            label="Example: 99"
+            fullWidth
+            value={refID}
+            onChange={(e) => {
+              setrefID(e.target.value);
+            }}
+            variant="filled"
+            sx={{
+              borderRadius: 3,
+              backgroundColor: '#FFFFFF',
+              '.MuiFilledInput-input': { color: 'black' },
+            }}
+          />
+          <Button
+            variant='contained'
+            sx={{
+              ml: 3,
+              fontSize: 16,
+              height: '50px', // ตั้งค่าความสูงให้ตรงกับ TextField
+              borderRadius:2
+            }}
+            onClick={() => handleClick(refID)}
+          >
+            VIEW
+          </Button>
+        </Box>
+      </Paper>
         </Grid>
       </Grid>
     </Box>

@@ -86,11 +86,11 @@ function FAQs() {
      aria-controls="panel1a-content"
      id="panel1a-header"
    >
-     <Typography sx={{ fontWeight: 'bold' }}>What is Baby Troll WEB3.0?</Typography>
+     <Typography sx={{ fontWeight: 'bold' }}>What is FLASHMOON WEB3.0?</Typography>
    </AccordionSummary>
    <AccordionDetails>
      <Typography>
-       Baby Troll WEB3.0 is the international community of the global decentralized ecosystem and the first ever Binance Smart Contract marketing matrix. Please note, here when you pay to the platform, you are paying to buy nfts, while the matrix plan is an add on which is free to join once you purchase an nft. Once you have purchased an nft you are automatically a part of self-executing software algorithm that performs the function of distributing partner rewards between community members, subject to certain conditions (matrix marketing plan).
+       FLASHMOON WEB3.0 is the international community of the global decentralized ecosystem and the first ever Binance Smart Contract marketing matrix. Please note, here when you pay to the platform, you are paying to buy nfts, while the matrix plan is an add on which is free to join once you purchase an nft. Once you have purchased an nft you are automatically a part of self-executing software algorithm that performs the function of distributing partner rewards between community members, subject to certain conditions (matrix marketing plan).
        <br/><br/>
        The contract code is publicly available. Information about transactions can always be viewed at the link bscscan.com. Once you have purchased an nft, you are the owner of the nft & you can find that nft in your dapp wallet.
      </Typography>
@@ -106,7 +106,7 @@ function FAQs() {
    </AccordionSummary>
    <AccordionDetails>
      <Typography>
-       The Baby Troll WEB3.0 platform consists of self-executing trades, which do not permit anyone to interfere with the course of the transactions.
+       The FLASHMOON WEB3.0 platform consists of self-executing trades, which do not permit anyone to interfere with the course of the transactions.
      </Typography>
    </AccordionDetails>
  </Accordion>
@@ -116,11 +116,11 @@ function FAQs() {
      aria-controls="panel3a-content"
      id="panel3a-header"
    >
-     <Typography sx={{ fontWeight: 'bold' }}>Who Created Baby Troll WEB3.0?</Typography>
+     <Typography sx={{ fontWeight: 'bold' }}>Who Created FLASHMOON WEB3.0?</Typography>
    </AccordionSummary>
    <AccordionDetails>
      <Typography>
-       Information about the creators of Baby Troll WEB3.0 will be available soon.
+       Information about the creators of FLASHMOON WEB3.0 will be available soon.
      </Typography>
    </AccordionDetails>
  </Accordion>

@@ -99,7 +99,7 @@ function Registers() {
 
           <Grid item xs={12} lg={4} direction='row' sx={{textAlign:'center'}}>
       <Typography variant="h6" color="white">
-        Registation in Baby Troll 3.0
+        Registation in FLASHMOON 3.0
       </Typography>
       <Box sx={{display:'flex', alignItems:'center'}}>
       <Typography variant="h6" color="white" sx={{ m: 3 }}>
